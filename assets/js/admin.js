@@ -38,10 +38,22 @@ jQuery(document).ready(function () {
                 name: "Status",
                 title: "Status",
                 type: "select",
-                items: [],
+                items: [{
+                        value: 'Active'
+                    },
+                    {
+                        value: 'Not available'
+                    },
+                    {
+                        value: 'Inactive'
+                    }
+                ],
                 valueField: "value",
-                textField: "name",
-                width: "120px"
+                textField: "value",
+                width: "120px",
+                itemTemplate: function (value, item) {
+                    return '<span class="label_status code_' + item.StatusCode + '">' + item.Status + '</span>';
+                }
             }
         ];
 
@@ -64,6 +76,7 @@ jQuery(document).ready(function () {
         };
 
         window.db = db;
+        var selectedItem = {};
 
         jQuery("#jsGrid").jsGrid({
             width: "100%",
@@ -74,7 +87,15 @@ jQuery(document).ready(function () {
             paging: true,
             autoload: true,
             data: products,
-            //rowClick: onGridRowClick,
+            rowClick: function (args) {
+                // clear all styles and set for clicked row active class
+                jQuery('.jsgrid-table tr').removeClass('active');
+                jQuery(args.event.target).parent().addClass('active');
+                // set selected product
+                selectedItem = args.item;
+                // enable tools
+                jQuery('.tools-links').addClass('enabled');
+            },
             pageSize: 10,
             pageIndex: 1,
             pageButtonCount: 5,
@@ -84,29 +105,41 @@ jQuery(document).ready(function () {
             fields: gridFields
         });
 
-        //jQuery("#jsGrid").jsGrid("fieldOption", "Id", "visible", false);
+        /**
+         * Tools actions
+         */
 
-        // jQuery("#jsGrid").jsGrid({
-        //     width: "100%",
-        //     height: "450px",
-        //     inserting: false,
-        //     editing: false,
-        //     sorting: true,
-        //     paging: true,
-        //     filtering: true,
+        // copy checkout link
+        new ClipboardJS('.copy_checkout_link', {
+            text: function (trigger) {
+                return 'https://www.envoice.in/secure/checkout?token=' + selectedItem.Token + '';
+            }
+        }).on('success', function (e) {
+            jQuery.notify("Checkout link copied to clipboard", {
+                position: "right bottom",
+                className: 'info'
+            });
+        });
 
-        //     // load products form variable from products.php
-        //     data: products,
+        // copy embed code
+        new ClipboardJS('.copy_embed_code', {
+            text: function (trigger) {
+                return '[envoice product_id="' + selectedItem.Id + '"]';
+            }
+        }).on('success', function (e) {
+            jQuery.notify("Embed code copied to clipboard", {
+                position: "right bottom",
+                className: 'info'
+            });
+        });;
 
-        //     // set header
-        //     fields: [
-        //         {name: "Name", type: "text", width: 150, validate: "required"},
-        //         {name: "Total", type: "text", width: 150, validate: "required"},
-        //         {name: "Status", type: "select", width: 150, validate: "required"},
-
-        //     ]
-        // });
-
+        // redirect to envoice website for product editing
+        jQuery('.configure_link').click(function () {
+            window.open(
+                'https://www.envoice.in/product/id/' + selectedItem.Id,
+                '_blank'
+            );
+        });
     }
 
 });

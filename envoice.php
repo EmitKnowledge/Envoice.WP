@@ -4,12 +4,12 @@
 Plugin Name: Envoice
 Plugin URI:
 Description: Use Envoice Buy Button on Wordpress platfrom with simple shortcode
-Version: 0.2.6
+Version: 0.3.8
 Author: Aleksey Developer
 Author URI: https://aleksey.co
  */
 
-define('ENVOICE_PLUGIN_VERSION', '0.2.6');
+define('ENVOICE_PLUGIN_VERSION', '0.3.8');
 
 // include Envoice API class helper
 include plugin_dir_path(__FILE__) . 'EnvoiceService.php';
@@ -196,6 +196,24 @@ function load_assets($hook)
     );
     wp_enqueue_script('envoice-admin-jsgrid');
 
+    // clipboard js
+    wp_register_script(
+        'envoice-admin-clipboard',
+        plugins_url('/assets/js/clipboard.min.js', plugin_basename(__FILE__)),
+        array('jquery'),
+        ENVOICE_PLUGIN_VERSION
+    );
+    wp_enqueue_script('envoice-admin-clipboard');
+
+    // notifyjs
+    wp_register_script(
+        'envoice-admin-notify',
+        plugins_url('/assets/js/notify.min.js', plugin_basename(__FILE__)),
+        array('jquery'),
+        ENVOICE_PLUGIN_VERSION
+    );
+    wp_enqueue_script('envoice-admin-notify');
+
     // admin scripts
     wp_register_script(
         'envoice-admin',
@@ -206,7 +224,6 @@ function load_assets($hook)
     wp_enqueue_script('envoice-admin');
 
     // load styles
-
     wp_enqueue_style(
         'envoice-admin',
         plugins_url('/assets/css/admin.css', plugin_basename(__FILE__)),
@@ -238,32 +255,6 @@ function load_assets($hook)
 // add new button to TinyMCE to insert Shorcode with Product ID
 if (isEnvoiceSettingsSet()) {
     add_action('init', 'add_button');
-}
-
-// register button
-function register_button($buttons)
-{
-    // add new button
-    array_push($buttons, "EnvoiceSelector");
-    return $buttons;
-}
-
-// set hooks howto handle it
-function add_button()
-{
-
-    add_filter('mce_external_plugins', 'add_plugin');
-    add_filter('mce_buttons', 'register_button');
-
-}
-
-// set the file with initialization scripts for product shortcode insert button
-function add_plugin($plugin_array)
-{
-
-    $plugin_array['EnvoiceSelector'] = plugins_url() . '/envoice/editor_plugin.js.php';
-
-    return $plugin_array;
 }
 
 /**
@@ -331,4 +322,66 @@ function envoice_shortcode($atts)
         </a>';
 
     return $btn;
+}
+
+/**
+ * Add select2 support for shortcode insterting
+ */
+function enqueue_select2_jquery()
+{
+    wp_register_style('select2css', 'https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css', false, ENVOICE_PLUGIN_VERSION);
+    wp_register_script('select2', 'https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js', array('jquery'), ENVOICE_PLUGIN_VERSION);
+    wp_enqueue_style('select2css');
+    wp_enqueue_script('select2');
+}
+
+// initi the scripts
+add_action('admin_enqueue_scripts', 'enqueue_select2_jquery');
+
+function select2jquery()
+{
+    ?>
+<script type='text/javascript'>
+
+        jQuery(document).ready(function ($) {
+
+        // init  select2 for media button
+        $( '#envoiceSelector' ).select2({
+            placeholder: 'Insert Envoice Product',
+        });
+
+        // manage on select event
+        $('#envoiceSelector').on('select2:select', function (e) {
+                var shortcode = '[envoice product_id="' + e.params.data.id + '"]';
+                // insert shorcode to tinyMCE
+                tinymce.editors.content.selection.setContent(shortcode);
+                // clear selected item
+                $('#envoiceSelector').val(null).trigger('change');
+    });
+});
+</script>
+    <?php
+}
+
+add_action('admin_head', 'select2jquery');
+
+// add media button
+add_action('media_buttons', 'add_envoice_media_button');
+function add_envoice_media_button()
+{
+
+    $api = new EnvoiceService(get_option('auth_key'), get_option('auth_secret'));
+    $products = $api->getProductsListJson();
+
+    $html = '<select id="envoiceSelector">';
+    $html .= '<option></option>';
+
+    foreach ($products as $p) {
+        $html .= '<option value="' . $p['Id'] . '">' . $p['Name'] . '</option>';
+    }
+
+    $html .= '</select>';
+
+    echo $html;
+
 }

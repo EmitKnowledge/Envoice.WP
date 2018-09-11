@@ -14,38 +14,38 @@ table.rc-table-resizing {
     cursor: ew-resize;
 }
 
-    table.rc-table-resizing thead,
-    table.rc-table-resizing thead > th,
-    table.rc-table-resizing thead > th > a {
-        cursor: ew-resize;
-    }
+table.rc-table-resizing thead,
+table.rc-table-resizing thead>th,
+table.rc-table-resizing thead>th>a {
+    cursor: ew-resize;
+}
 
 .jsgrid {
     position: relative;
     font-size: 1em;
 }
 
-    .jsgrid,
-    .jsgrid *,
-    .jsgrid *:before,
-    .jsgrid *:after {
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        box-sizing: border-box;
-    }
+.jsgrid,
+.jsgrid *,
+.jsgrid *:before,
+.jsgrid *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
 
-        .jsgrid .jsgrid-pager-container {
-            width: auto;
-            display: table;
-            margin: 0 auto;
-            overflow: hidden;
-        }
+.jsgrid .jsgrid-pager-container {
+    width: auto;
+    display: table;
+    margin: 0 auto;
+    overflow: hidden;
+}
 
-        .jsgrid input,
-        .jsgrid textarea,
-        .jsgrid select {
-            font-size: 1em;
-        }
+.jsgrid input,
+.jsgrid textarea,
+.jsgrid select {
+    font-size: 1em;
+}
 
 .jsgrid-grid-header {
     overflow-x: hidden !important;
@@ -79,27 +79,27 @@ table.rc-table-resizing {
     border-collapse: collapse;
 }
 
-    .jsgrid-table td {
-        padding: .5em .5em;
-        -ms-word-break: break-word;
-        word-break: break-word;
-    }
+.jsgrid-table td {
+    padding: .5em .5em;
+    -ms-word-break: break-word;
+    word-break: break-word;
+}
 
-    .jsgrid-table > tbody > tr > td {
-        vertical-align: middle;
-        color: #7F8CA3;
-    }
+.jsgrid-table>tbody>tr>td {
+    vertical-align: middle;
+    color: #7F8CA3;
+}
 
-    .jsgrid-table td,
-    .jsgrid-table th {
-        background-clip: padding-box;
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        box-sizing: border-box;
-    }
+.jsgrid-table td,
+.jsgrid-table th {
+    background-clip: padding-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
 
 .jsgrid-align-left,
-.jsgrid-align-left *   {
+.jsgrid-align-left * {
     text-align: left !important;
 }
 
@@ -117,9 +117,9 @@ table.rc-table-resizing {
     background-color: white !important;
 }
 
-    .jsgrid-header-row > th {
-        padding: .5em .5em;
-    }
+.jsgrid-header-row>th {
+    padding: .5em .5em;
+}
 
 .jsgrid-filter-row input,
 .jsgrid-filter-row textarea,
@@ -134,16 +134,16 @@ table.rc-table-resizing {
     padding: 0;
 }
 
-    .jsgrid-filter-row input[type='checkbox'],
-    .jsgrid-edit-row input[type='checkbox'],
-    .jsgrid-insert-row input[type='checkbox'] {
-        width: auto;
-    }
+.jsgrid-filter-row input[type='checkbox'],
+.jsgrid-edit-row input[type='checkbox'],
+.jsgrid-insert-row input[type='checkbox'] {
+    width: auto;
+}
 
-.jsgrid-header-row > th,
-.jsgrid-filter-row > td,
-.jsgrid-insert-row > td,
-.jsgrid-edit-row > td {
+.jsgrid-header-row>th,
+.jsgrid-filter-row>td,
+.jsgrid-insert-row>td,
+.jsgrid-edit-row>td {
     text-align: center;
 }
 
@@ -168,8 +168,7 @@ table.rc-table-resizing {
     padding: .2em .5em;
 }
 
-    .jsgrid-pager-nav-button a:hover {
-    }
+.jsgrid-pager-nav-button a:hover {}
 
 .jsgrid-pager-nav-button .fa {
     font-size: 20px;
@@ -180,15 +179,13 @@ table.rc-table-resizing {
     font-size: 10px;
 }
 
-    .jsgrid-pager .pagger-arrow-icon.icon-right-arrow {
-        margin-left: 10px;
-    }
+.jsgrid-pager .pagger-arrow-icon.icon-right-arrow {
+    margin-left: 10px;
+}
 
-    .jsgrid-pager .pagger-arrow-icon.icon-left-arrow {
-        margin-right: 10px;
-    }
-
-
+.jsgrid-pager .pagger-arrow-icon.icon-left-arrow {
+    margin-right: 10px;
+}
 
 .jsgrid-pager-nav-inactive-button {
     display: none;
@@ -205,17 +202,17 @@ table.rc-table-resizing {
 
 .jsgrid-grid-header,
 .jsgrid-grid-body,
-.jsgrid-header-row > th,
-.jsgrid-filter-row > td,
-.jsgrid-insert-row > td,
-.jsgrid-edit-row > td {
+.jsgrid-header-row>th,
+.jsgrid-filter-row>td,
+.jsgrid-insert-row>td,
+.jsgrid-edit-row>td {
     border: 1px solid #cccccc;
     border-top: 0;
     border-left: none;
     border-right: none;
 }
 
-.jsgrid-header-row > th {
+.jsgrid-header-row>th {
     overflow: hidden;
     border-bottom: 0;
     color: #728399;
@@ -225,32 +222,32 @@ table.rc-table-resizing {
     background-clip: padding-box;
 }
 
-.jsgrid-filter-row > td {
+.jsgrid-filter-row>td {
     border-top: 0;
 }
 
-.jsgrid-header-row > th {
+.jsgrid-header-row>th {
     border-top: 0;
 }
 
-.jsgrid-header-row > th,
-.jsgrid-filter-row > td,
-.jsgrid-insert-row > td {
+.jsgrid-header-row>th,
+.jsgrid-filter-row>td,
+.jsgrid-insert-row>td {
     border-bottom: 0;
 }
 
-    .jsgrid-header-row > th:first-child,
-    .jsgrid-filter-row > td:first-child,
-    .jsgrid-insert-row > td:first-child {
-        border-left: none;
-        background-clip: padding-box;
-    }
+.jsgrid-header-row>th:first-child,
+.jsgrid-filter-row>td:first-child,
+.jsgrid-insert-row>td:first-child {
+    border-left: none;
+    background-clip: padding-box;
+}
 
-    .jsgrid-header-row > th:last-child,
-    .jsgrid-filter-row > td:last-child,
-    .jsgrid-insert-row > td:last-child {
-        border-right: none;
-    }
+.jsgrid-header-row>th:last-child,
+.jsgrid-filter-row>td:last-child,
+.jsgrid-insert-row>td:last-child {
+    border-right: none;
+}
 
 .jsgrid-grid-header {
     background: #cccccc;
@@ -266,13 +263,13 @@ table.rc-table-resizing {
     scrollbar-dark-shadow-color: #f3f7f9;
 }
 
-    .jsgrid-header-scrollbar::-webkit-scrollbar {
-        visibility: hidden;
-    }
+.jsgrid-header-scrollbar::-webkit-scrollbar {
+    visibility: hidden;
+}
 
-    .jsgrid-header-scrollbar::-webkit-scrollbar-track {
-        background: #f3f7f9;
-    }
+.jsgrid-header-scrollbar::-webkit-scrollbar-track {
+    background: #f3f7f9;
+}
 
 .jsgrid-header-sortable:hover {
     cursor: pointer;
@@ -321,74 +318,72 @@ table.rc-table-resizing {
     margin-bottom: 40px;
 }
 
-    .jsgrid-grid-body td {
-        border: 0;
-    }
+.jsgrid-grid-body td {
+    border: 0;
+}
 
-    .jsgrid-grid-body thead tr th {
-        display: table-cell;
-        overflow: hidden;
-        height: 0;
-        min-height: 0;
-        max-height: 0;
-        padding: 0;
-        margin: 0;
-        line-height: 0;
-        border: none !important;
-        background-color: transparent;
-    }
+.jsgrid-grid-body thead tr th {
+    display: table-cell;
+    overflow: hidden;
+    height: 0;
+    min-height: 0;
+    max-height: 0;
+    padding: 0;
+    margin: 0;
+    line-height: 0;
+    border: none !important;
+    background-color: transparent;
+}
 
-    .jsgrid-grid-body tr:first-child td {
-        border-top: none;
-    }
+.jsgrid-grid-body tr:first-child td {
+    border-top: none;
+}
 
-    .jsgrid-grid-body tr td:first-child {
-        border-left: none;
-        background-clip: padding-box;
-    }
+.jsgrid-grid-body tr td:first-child {
+    border-left: none;
+    background-clip: padding-box;
+}
 
-    .jsgrid-grid-body tr td:last-child {
-        border-right: none;
-    }
+.jsgrid-grid-body tr td:last-child {
+    border-right: none;
+}
 
-.jsgrid-row > td {
+.jsgrid-row>td {
     background: #fff;
 }
 
-.jsgrid-alt-row > td {
+.jsgrid-alt-row>td {
     background: #f9f9f9;
 }
 
-.jsgrid-row.active > td,
-.jsgrid-alt-row.active > td {
+.jsgrid-row.active>td,
+.jsgrid-alt-row.active>td {
     background-color: #007bbd;
     color: #fff;
 }
 
-.jsgrid-row.active > td *,
-.jsgrid-alt-row.active > td * {
+.jsgrid-row.active>td *,
+.jsgrid-alt-row.active>td * {
     color: #fff;
 }
 
-.jsgrid-header-row > th {
+.jsgrid-header-row>th {
     /*background: #fff;*/
 }
 
-.jsgrid-filter-row > td {
+.jsgrid-filter-row>td {
     background: #fff;
 }
 
-.jsgrid-insert-row > td {
+.jsgrid-insert-row>td {
     background: #fff;
 }
 
-.jsgrid-edit-row > td {
+.jsgrid-edit-row>td {
     background: #fff;
 }
 
-.jsgrid-selected-row > td {
-    
-}
+.jsgrid-selected-row>td {}
 
 .jsgrid-nodata-row td {
     background: #fff;
@@ -399,15 +394,14 @@ table.rc-table-resizing {
     font-weight: 600;
 }
 
-    .jsgrid-pager a:hover {
-        text-decoration: none;
-    }
+.jsgrid-pager a:hover {
+    text-decoration: none;
+}
 
 .jsgrid-pager-page {
     padding: 15px !important;
     margin-right: 10px;
 }
-
 
 .jsgrid-pager-nav-button {
     padding: 15px !important;
@@ -433,7 +427,7 @@ table.rc-table-resizing {
     border-radius: 2px;
 }
 
-.jsgrid-button + .jsgrid-button {
+.jsgrid-button+.jsgrid-button {
     margin-left: 5px;
 }
 
@@ -526,21 +520,21 @@ table.rc-table-resizing {
     border: 1px solid #e4eaec;
 }
 
-    .jsgrid-load-panel:before {
-        position: absolute;
-        top: .5em;
-        left: 50%;
-        width: 2em;
-        height: 2em;
-        margin-left: -1em;
-        content: ' ';
-        border: 2px solid #009a67;
-        border-right-color: transparent;
-        border-radius: 50%;
-        -webkit-animation: indicator 1s linear infinite;
-        -o-animation: indicator 1s linear infinite;
-        animation: indicator 1s linear infinite;
-    }
+.jsgrid-load-panel:before {
+    position: absolute;
+    top: .5em;
+    left: 50%;
+    width: 2em;
+    height: 2em;
+    margin-left: -1em;
+    content: ' ';
+    border: 2px solid #009a67;
+    border-right-color: transparent;
+    border-radius: 50%;
+    -webkit-animation: indicator 1s linear infinite;
+    -o-animation: indicator 1s linear infinite;
+    animation: indicator 1s linear infinite;
+}
 
 @-webkit-keyframes indicator {
     from {
@@ -592,39 +586,40 @@ table.rc-table-resizing {
         transform: rotate(360deg);
     }
 }
+
 /* old IE */
 .jsgrid-load-panel {
     padding-top: 1.5em\9;
 }
 
-    .jsgrid-load-panel:before {
-        display: none\9;
-    }
+.jsgrid-load-panel:before {
+    display: none\9;
+}
 
 .jsgrid-filter-row td {
     padding: 0 !important;
 }
 
-    .jsgrid-filter-row td input {
-        height: 48px !important;
-        border: 0;
-        border-top: 1px solid;
-        border-radius: 2px !important;
-        border-color: #cccccc !important;
-        background-color: #fcfdfe;
-        padding: 0 15px;
-        font-style: italic;
-    }
+.jsgrid-filter-row td input {
+    height: 48px !important;
+    border: 0;
+    border-top: 1px solid;
+    border-radius: 2px !important;
+    border-color: #cccccc !important;
+    background-color: #fcfdfe;
+    padding: 0 15px;
+    font-style: italic;
+}
 
-        .jsgrid-filter-row td input:focus {
-            background-color: #fff;
-            font-style: normal;
-            color: #5f6b80 !important;
-        }
+.jsgrid-filter-row td input:focus {
+    background-color: #fff;
+    font-style: normal;
+    color: #5f6b80 !important;
+}
 
-    .jsgrid-filter-row td.selected {
-        border-bottom: 0;
-    }
+.jsgrid-filter-row td.selected {
+    border-bottom: 0;
+}
 
 .jsgrid-header-row th {
     position: relative;
@@ -632,12 +627,12 @@ table.rc-table-resizing {
     border-bottom: 0 !important;
 }
 
-    .jsgrid-header-row th.jsgrid-header-sortable.selected {
-        border-top: 2px solid #638ca6 !important;
-        border-bottom: 0 !important;
-    }
+.jsgrid-header-row th.jsgrid-header-sortable.selected {
+    border-top: 2px solid #638ca6 !important;
+    border-bottom: 0 !important;
+}
 
-.jsgrid-filter-row > td.selected {
+.jsgrid-filter-row>td.selected {
     border-top: 0;
 }
 
@@ -673,6 +668,7 @@ table.rc-table-resizing {
     padding-top: 0;
     text-overflow: ellipsis;
 }
+
 /* firefox 19+ */
 .jsgrid-filter-row .table-search-inp:-ms-input-placeholder {
     color: #9fb1be;
@@ -682,6 +678,7 @@ table.rc-table-resizing {
     padding-top: 0;
     text-overflow: ellipsis;
 }
+
 /* ie */
 .jsgrid-filter-row .table-search-inp:-moz-placeholder {
     color: #9fb1be;
@@ -699,31 +696,33 @@ table.rc-table-resizing {
 }
 
 /* table header labels */
-.jsgrid-header-row th > div {
+.jsgrid-header-row th>div {
     float: left;
     /*width: auto !important;*/
     text-align: left;
 }
 
-    .jsgrid-header-row th > div:after {
-        float: right;
-    }
+.jsgrid-header-row th>div:after {
+    float: right;
+}
 
 /* EDited  CSS styles*/
-.jsgrid-alt-row > td, .jsgrid-row > td {
+.jsgrid-alt-row>td,
+.jsgrid-row>td {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
 }
 
-.jsgrid-alt-row > td, .jsgrid-row > td {
+.jsgrid-alt-row>td,
+.jsgrid-row>td {
     padding: 16px !important;
 }
 
-    .jsgrid-alt-row > td:first-child,
-    .jsgrid-row > td:first-child {
-        font-weight: 700;
-    }
+.jsgrid-alt-row>td:first-child,
+.jsgrid-row>td:first-child {
+    font-weight: 700;
+}
 
 .jsgrid-header-row .jsgrid-header-sortable {
     padding: 16px 16px !important;
