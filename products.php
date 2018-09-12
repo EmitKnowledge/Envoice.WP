@@ -30,39 +30,12 @@ function envoice_products_list_html()
 <?php if (count($products) > 0) {?>
         <div class="envoice-content tools">
 
+			<div class="toolbar-description">
+                        CHECKOUT
+                    </div>
+
         <ul class="tools-links">
-            <li class="copy_embed_code">
-            <div class="livicon-evo livicon-evo-holder" data-options="name: globe; size: 30px; strokeColor: #cccccc; style: lines; eventType:hover; eventOn:parent; tryToSharpen: true" style="visibility: visible; width: 30px;"><div class="lievo-svg-wrapper"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 60 60" xml:space="preserve" data-shift="xy" data-animoptions="{'duration':'0.7', 'repeat':'3', 'repeatDelay':'0'}" preserveAspectRatio="xMinYMin meet" style="left: -0.25px; top: 0px;"><g class="lievo-setrotation"><g class="lievo-setsharp" data-svg-origin="31 30" style="transform-origin: 0px 0px 0px; transform: matrix(1, 0, 0, 1, -1, -1);"><g class="lievo-setflip"><g class="lievo-main">
-		<g class="lievo-lineicon lievo-filledicon">
-			<defs>
-				<mask id="livicon_globe_9">
-					<circle class="lievo-donotdraw lievo-nohovercolor lievo-nohoverstroke lievo-savefill" fill="#ffffff" cx="30" cy="30" r="23.9"></circle>
-				</mask>
-			</defs>
-			<circle transform="rotate(-90, 30, 30)" stroke="#007bbd" stroke-width="0" fill="none" cx="30" cy="30" r="24" style=""></circle>
-			<g mask="url(#livicon_globe_9)">
-				<g>
-					<line class="lievo-altstroke" fill="none" stroke="#007bbd" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" x1="8" y1="20" x2="52" y2="20" style=""></line>
-					<line class="lievo-altstroke" fill="none" stroke="#007bbd" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" x1="6" y1="30" x2="56" y2="30" style=""></line>
-					<line class="lievo-altstroke" fill="none" stroke="#007bbd" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" x1="8" y1="40" x2="52" y2="40" style=""></line>
-				</g>
-				<g>
-					<path class="lievo-altstroke" fill="none" stroke="#007bbd" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" d="M29.95,55C21.85,50.08,16,40.17,16,30c0-10.17,5.85-20.08,13.95-25" style="" data-original="M30,55C16.19,55,5,43.81,5,30C5,16.19,16.19,5,30,5"></path>
-					<path class="lievo-altstroke" fill="none" stroke="#007bbd" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" d="M30,55c0-7.68,0-14.41,0-25c0-10.59,0-16.24,0-25" style="" data-original="M29.95,55C21.85,50.08,16,40.17,16,30c0-10.17,5.85-20.08,13.95-25"></path>
-					<path class="lievo-altstroke" fill="none" stroke="#007bbd" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" d="M30,55c8.1-4.92,14-14.83,14-25c0-10.17-5.9-20.08-14-25" style="" data-original="M30,55c0-7.68,0-14.41,0-25c0-10.59,0-16.24,0-25"></path>
-					<path class="lievo-altstroke" fill="none" stroke="#007bbd" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" d="M30,5c13.81,0,25,11.19,25,25c0,13.81-11.19,25-25,25" style="" data-original="M30,55c8.1-4.92,14-14.83,14-25c0-10.17-5.9-20.08-14-25"></path>
-				</g>
-			</g>
-			<circle class="lievo-altstroke" transform="rotate(-90, 30, 30)" fill="none" stroke="#007bbd" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" cx="30" cy="30" r="24" style=""></circle>
-		</g>
 
-
-	<rect x="-20" y="-20" width="4" height="4" fill="none" stroke="#007bbd" style="stroke-width: 2; stroke-linecap: butt; stroke-linejoin: round; opacity: 0;" class="lievo-checkshift lievo-donotdraw lievo-nohoverstroke lievo-nohovercolor"></rect></g></g></g></g>
-
-<desc>LivIcons Evolution</desc></svg>
-</div>
-                Embed code
-            </li>
             <li class="copy_checkout_link">
             <div class="livicon-evo livicon-evo-holder" data-options="name: link; size: 30px; strokeColor: #cccccc; style: lines; eventType:hover; eventOn:parent; tryToSharpen: true" style="visibility: visible; width: 30px;"><div class="lievo-svg-wrapper"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 60 60" xml:space="preserve" data-animoptions="{'duration':'0.5', 'repeat':'1', 'repeatDelay':'0'}" preserveAspectRatio="xMinYMin meet" style="left: 0.25px; top: 0px;"><g class="lievo-setrotation"><g class="lievo-setsharp"><g class="lievo-setflip"><g class="lievo-main">
 		<g class="lievo-filledicon lievo-lineicon">
@@ -77,6 +50,50 @@ function envoice_products_list_html()
 <desc>LivIcons Evolution</desc><defs></defs></svg></div></div>
                 Copy checkout link
             </li>
+
+			<li class="copy_embed_code">
+
+            <div class="livicon-evo livicon-evo-holder" data-options="name: globe; size: 30px; strokeColor: #cccccc; style: lines; eventType:hover; eventOn:parent; tryToSharpen: true" style="visibility: visible; width: 30px;">
+				<div class="lievo-svg-wrapper">
+					<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 60 60" xml:space="preserve" data-shift="xy" data-animoptions="{'duration':'0.7', 'repeat':'3', 'repeatDelay':'0'}" preserveAspectRatio="xMinYMin meet" style="left: -0.25px; top: 0px;">
+						<g class="lievo-setrotation">
+							<g class="lievo-setsharp" data-svg-origin="31 30" style="transform-origin: 0px 0px 0px; transform: matrix(1, 0, 0, 1, -1, -1);">
+								<g class="lievo-setflip">
+									<g class="lievo-main">
+										<g class="lievo-lineicon lievo-filledicon">
+											<defs>
+												<mask id="livicon_globe_9">
+													<circle class="lievo-donotdraw lievo-nohovercolor lievo-nohoverstroke lievo-savefill" fill="#ffffff" cx="30" cy="30" r="23.9"></circle>
+												</mask>
+											</defs>
+											<circle transform="rotate(-90, 30, 30)" stroke="#007bbd" stroke-width="0" fill="none" cx="30" cy="30" r="24" style=""></circle>
+											<g mask="url(#livicon_globe_9)">
+												<g>
+													<line class="lievo-altstroke" fill="none" stroke="#007bbd" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" x1="8" y1="20" x2="52" y2="20" style=""></line>
+													<line class="lievo-altstroke" fill="none" stroke="#007bbd" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" x1="6" y1="30" x2="56" y2="30" style=""></line>
+													<line class="lievo-altstroke" fill="none" stroke="#007bbd" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" x1="8" y1="40" x2="52" y2="40" style=""></line>
+												</g>
+												<g>
+													<path class="lievo-altstroke" fill="none" stroke="#007bbd" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" d="M29.95,55C21.85,50.08,16,40.17,16,30c0-10.17,5.85-20.08,13.95-25" style="" data-original="M30,55C16.19,55,5,43.81,5,30C5,16.19,16.19,5,30,5"></path>
+													<path class="lievo-altstroke" fill="none" stroke="#007bbd" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" d="M30,55c0-7.68,0-14.41,0-25c0-10.59,0-16.24,0-25" style="" data-original="M29.95,55C21.85,50.08,16,40.17,16,30c0-10.17,5.85-20.08,13.95-25"></path>
+													<path class="lievo-altstroke" fill="none" stroke="#007bbd" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" d="M30,55c8.1-4.92,14-14.83,14-25c0-10.17-5.9-20.08-14-25" style="" data-original="M30,55c0-7.68,0-14.41,0-25c0-10.59,0-16.24,0-25"></path>
+													<path class="lievo-altstroke" fill="none" stroke="#007bbd" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" d="M30,5c13.81,0,25,11.19,25,25c0,13.81-11.19,25-25,25" style="" data-original="M30,55c8.1-4.92,14-14.83,14-25c0-10.17-5.9-20.08-14-25"></path>
+												</g>
+											</g>
+											<circle class="lievo-altstroke" transform="rotate(-90, 30, 30)" fill="none" stroke="#007bbd" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" cx="30" cy="30" r="24" style=""></circle>
+										</g>
+										<rect x="-20" y="-20" width="4" height="4" fill="none" stroke="#007bbd" style="stroke-width: 2; stroke-linecap: butt; stroke-linejoin: round; opacity: 0;" class="lievo-checkshift lievo-donotdraw lievo-nohoverstroke lievo-nohovercolor"></rect>
+									</g>
+								</g>
+							</g>
+						</g>
+						<desc>LivIcons Evolution</desc>
+						</svg>
+					</div>
+				</div>
+                Embed
+            </li>
+
             <li class="configure_link">
             <div class="livicon-evo livicon-evo-holder" data-options="name: pencil; size: 30px; morphState:end; animated: false; strokeColor: #cccccc; style: lines; eventType:hover; eventOn:parent; tryToSharpen: true" style="visibility: visible; width: 30px;"><div class="lievo-svg-wrapper"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 60 60" xml:space="preserve" data-animoptions="{'duration':'2.5', 'repeat':'0', 'repeatDelay':'1'}" preserveAspectRatio="xMinYMin meet" style="left: 0.015625px; top: 0px;"><g class="lievo-setrotation"><g class="lievo-setsharp"><g class="lievo-setflip"><g class="lievo-main">
 		<g class="lievo-common">

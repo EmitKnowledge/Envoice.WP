@@ -4,12 +4,12 @@
 Plugin Name: Envoice
 Plugin URI:
 Description: Use Envoice Buy Button on Wordpress platfrom with simple shortcode
-Version: 0.3.8
+Version: 0.4
 Author: Aleksey Developer
 Author URI: https://aleksey.co
  */
 
-define('ENVOICE_PLUGIN_VERSION', '0.3.8');
+define('ENVOICE_PLUGIN_VERSION', '0.4');
 
 // include Envoice API class helper
 include plugin_dir_path(__FILE__) . 'EnvoiceService.php';

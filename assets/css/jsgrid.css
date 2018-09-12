@@ -132,6 +132,8 @@ table.rc-table-resizing thead>th>a {
 .jsgrid-insert-row select {
     width: 100%;
     padding: 0;
+    position: relative;
+    top: -1px;
 }
 
 .jsgrid-filter-row input[type='checkbox'],
@@ -206,8 +208,9 @@ table.rc-table-resizing thead>th>a {
 .jsgrid-filter-row>td,
 .jsgrid-insert-row>td,
 .jsgrid-edit-row>td {
-    border: 1px solid #cccccc;
-    border-top: 0;
+    border: 1px solid #ccc;
+    background-color: #fcfdfe;
+    border-bottom: 0;
     border-left: none;
     border-right: none;
 }
@@ -253,14 +256,33 @@ table.rc-table-resizing thead>th>a {
     background: #cccccc;
 }
 
-.jsgrid-header-scrollbar {
-    scrollbar-arrow-color: #f3f7f9;
-    scrollbar-base-color: #f3f7f9;
-    scrollbar-3dlight-color: #f3f7f9;
-    scrollbar-highlight-color: #f3f7f9;
-    scrollbar-track-color: #f3f7f9;
-    scrollbar-shadow-color: #f3f7f9;
-    scrollbar-dark-shadow-color: #f3f7f9;
+.jsgrid-filter-row>td:first-child,
+.jsgrid-insert-row>td:first-child {
+    border: 1px solid #ccc;
+    background-color: #fcfdfe;
+    border-bottom: 0;
+    border-left: none;
+    border-right: none;
+}
+
+.jsgrid-filter-row .jsgrid-cell {
+    border: 1px solid #ccc;
+    background-color: #fcfdfe;
+    border-bottom: 0;
+    border-left: none;
+    border-right: none;
+}
+
+.jsgrid-grid-header,
+.jsgrid-grid-body,
+.jsgrid-header-row>th,
+.jsgrid-filter-row>td,
+.jsgrid-insert-row>td,
+.jsgrid-edit-row>td {
+    border: 1px solid #ccc;
+    border-top: 0;
+    border-left: none;
+    border-right: none;
 }
 
 .jsgrid-header-scrollbar::-webkit-scrollbar {
@@ -609,6 +631,8 @@ table.rc-table-resizing thead>th>a {
     background-color: #fcfdfe;
     padding: 0 15px;
     font-style: italic;
+    position: relative;
+    top: -1px;
 }
 
 .jsgrid-filter-row td input:focus {

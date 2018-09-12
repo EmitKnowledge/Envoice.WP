@@ -27,18 +27,42 @@ class EnvoiceService
     public function getProducts()
     {
 
+        $pageSize = 100;
+
         // call to envoice server
-        $data = $this->get('product/all');
+        $json = $this->get('product/all/?page=1&pageSize=' . $pageSize);
+
+        $products = $json->Result;
+
+        $totalItems = $json->TotalCount;
+        $displayed = $json->Count;
+
+        // if we have more products that we recieved
+        // make a couple of calls
+        if ($totalItems > $displayed) {
+
+            $pages = ceil($totalItems / $pageSize);
+
+            for ($page = 2; $page <= $pages; $j++) {
+                $json = $this->get('product/all/?page=' . $page . '&pageSize=' . $pageSize);
+                array_merge($products, $json->Result);
+            }
+
+        }
 
         // save to database
-        $this->storeProducts($data);
+        $this->storeProducts($products);
 
-        return $data;
+        return $products;
 
     }
 
     /**
      * Make a call to API
+     *
+     * @param String $method Requested method
+     *
+     * @return array
      */
     public function get($method)
     {
@@ -53,23 +77,23 @@ class EnvoiceService
 
         $result = wp_remote_get($this->endpoint . $method, $args);
 
-        return $result;
+        $json = json_decode($result['body']);
+
+        return $json;
 
     }
 
     /**
      * Save products to database
      */
-    public function storeProducts($data)
+    public function storeProducts($products)
     {
 
         // update database with products list
         global $wpdb;
         $table_name = $wpdb->prefix . 'envoice_products';
 
-        $json = json_decode($data['body']);
-
-        foreach ($json->Result as $item) {
+        foreach ($products as $item) {
 
             $wpdb->insert(
                 $table_name,
@@ -92,10 +116,11 @@ class EnvoiceService
     public function getProductsListJson()
     {
 
-        $data = $this->getProducts();
-        $data = json_decode($data['body']);
+        $json = $this->getProducts();
+        $products = [];
 
-        foreach ($data->Result as $item) {
+        foreach ($json as $item) {
+
             $products[] = [
                 'Id' => $item->Id,
                 'Name' => $item->Name,
@@ -103,9 +128,12 @@ class EnvoiceService
                 'Status' => $this->getHumanStatus($item->Status),
                 'Currency' => $item->Currency->Value,
                 'StatusCode' => $item->Status,
-                'Token'=>$item->AccessToken
+                'Token' => $item->AccessToken,
             ];
+
         }
+
+
 
         return $products;
 

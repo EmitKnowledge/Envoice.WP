@@ -96,13 +96,16 @@ jQuery(document).ready(function () {
                 // enable tools
                 jQuery('.tools-links').addClass('enabled');
             },
-            pageSize: 10,
+            pageSize: 5,
             pageIndex: 1,
             pageButtonCount: 5,
             pagePrevText: '<i class="fa fa-arrow-circle-o-left"></i>',
             pageNextText: '<i class="fa fa-arrow-circle-o-right"></i>',
             controller: db,
-            fields: gridFields
+            fields: gridFields,
+            onDataLoaded: function (args) {
+                jQuery('.jsgrid-cell input').attr("placeholder", "Search...");
+            }
         });
 
         /**
