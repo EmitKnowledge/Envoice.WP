@@ -1,4 +1,21 @@
+jQuery.notify.addStyle('envoice-success', {
+    html: '<div><div class="howl"><div class="howl-slot howl-has-icon"><div class="howl-message howl-success"><button class="close howl-close">×</button><div class="howl-message-inner"><h5 class="howl-title">Success!</h5>Successfully copied to clipboard</div><i class="howl-icon far fa-check-square"></i></div></div></div></div>',
+    classes: {
+        success: {
+
+        },
+        error: {
+
+        }
+    }
+});
+
 jQuery(document).ready(function () {
+
+    jQuery(document).on('click', '.howl-message .howl-close', function () {
+        //programmatically trigger propogating hide event
+        jQuery(this).trigger('notify-hide');
+    });
 
     if (typeof products != 'undefined') {
 
@@ -98,9 +115,10 @@ jQuery(document).ready(function () {
             },
             pageSize: 5,
             pageIndex: 1,
-            pageButtonCount: 5,
-            pagePrevText: '<i class="fa fa-arrow-circle-o-left"></i>',
-            pageNextText: '<i class="fa fa-arrow-circle-o-right"></i>',
+            pageButtonCount: 4,
+            pagerFormat: "{prev} {pages} {next}",
+            pagePrevText: '<i class="fas fa-arrow-circle-left"></i>',
+            pageNextText: '<i class="fas fa-arrow-circle-right"></i>',
             controller: db,
             fields: gridFields,
             onDataLoaded: function (args) {
@@ -120,7 +138,7 @@ jQuery(document).ready(function () {
         }).on('success', function (e) {
             jQuery.notify("Checkout link copied to clipboard", {
                 position: "right bottom",
-                className: 'info'
+                style: 'envoice-success'
             });
         });
 
@@ -132,7 +150,7 @@ jQuery(document).ready(function () {
         }).on('success', function (e) {
             jQuery.notify("Embed code copied to clipboard", {
                 position: "right bottom",
-                className: 'info'
+                style: 'envoice-success'
             });
         });;
 
