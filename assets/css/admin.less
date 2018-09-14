@@ -103,6 +103,35 @@
       }
     }
 
+    .col-left {
+      width: 60%;
+      float: left;
+    }
+
+    .col-right {
+      width: 40%;
+      float: left;
+      .video-wrap {
+        position: relative;
+        padding-bottom: 56.25%;
+        padding-top: 25px;
+        height: 0;
+        iframe {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+
+    .col-row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
     .caption {
       position: relative;
       padding: 0 0 10px 45px;
@@ -145,7 +174,7 @@
     position: relative;
     margin: 0 0 15px 0;
     .text-input {
-      width: 50%;
+      width: 90%;
       border-radius: 2px !important;
       border-color: #007bbd !important;
       background-color: #fcfefd !important;
@@ -290,8 +319,8 @@
   line-height: 1;
   color: #000;
   text-shadow: 0 1px 0 #fff;
-  opacity: .2;
-  filter: alpha(opacity=20)
+  opacity: 0.2;
+  filter: alpha(opacity=20);
 }
 
 .close:hover,
@@ -299,8 +328,8 @@
   color: #000;
   text-decoration: none;
   cursor: pointer;
-  opacity: .5;
-  filter: alpha(opacity=50)
+  opacity: 0.5;
+  filter: alpha(opacity=50);
 }
 
 button.close {
@@ -308,7 +337,7 @@ button.close {
   cursor: pointer;
   background: transparent;
   border: 0;
-  -webkit-appearance: none
+  -webkit-appearance: none;
 }
 
 // notification styles

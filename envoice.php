@@ -4,12 +4,12 @@
 Plugin Name: Envoice
 Plugin URI:
 Description: Use Envoice Buy Button on Wordpress platfrom with simple shortcode
-Version: 0.4.3
+Version: 0.4.5
 Author: Aleksey Developer
 Author URI: https://aleksey.co
  */
 
-define('ENVOICE_PLUGIN_VERSION', '0.4.3');
+define('ENVOICE_PLUGIN_VERSION', '0.4.5');
 
 // include Envoice API class helper
 include plugin_dir_path(__FILE__) . 'EnvoiceService.php';
@@ -81,6 +81,8 @@ function envoice_options_page_html()
                     <h2>Plugin settings</h2>
                     <p>Settings to integrate with your existing Envoice account</p>
                 </div>
+                <div class="col-row">
+                <div class="col-left">
                 <div class="caption">
                     <span class="step">1</span>
                     <h3>Connect your Envoice account</h3>
@@ -127,6 +129,13 @@ settings_fields('envoice_fields');
                     <button type="submit" class="save-btn">Save</button>
                 </form>
 
+                </div>
+                <div class="col-right">
+                <div class="video-wrap">
+                <iframe width="100%" height="auto" src="https://www.youtube.com/embed/7AOtgu3_3_8?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    </div>
+                </div>
+                </div>
             </div>
         </div>
     </div>
