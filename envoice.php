@@ -132,7 +132,7 @@ settings_fields('envoice_fields');
                 </div>
                 <div class="col-right">
                 <div class="video-wrap">
-                <iframe width="100%" height="auto" src="https://www.youtube.com/embed/7AOtgu3_3_8?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                <iframe width="100%" height="auto" src="https://www.youtube.com/watch?v=HZWdejjWA0g" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                     </div>
                 </div>
                 </div>
